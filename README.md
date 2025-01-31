@@ -31,7 +31,7 @@ Para diseñar un sistema que gestione los pedidos de mi empresa, es necesario co
 
 ### a) Conceptos de UML y Programación Orientada a Objetos
 
-Lista de los conceptos que aparecen en los diagramas UML y su relación con la programación orientada a objetos:
+Una breve lista de los conceptos que te has encontrado en los diagramas UML que se asemejan a los conceptos de programación orientada a objetos. Por ejemplo: Clases: GestorPedidos
 
 - **Clases**: Ejemplo: `GestorPedidos`
 - **Atributos**: Datos asociados a una clase, como `nombre`, `precio`, `stock`.
@@ -40,25 +40,46 @@ Lista de los conceptos que aparecen en los diagramas UML y su relación con la p
 
 ### b) Herramienta utilizada para el diagrama UML
 
-Explicación de la herramienta utilizada para generar el diagrama UML, comparación con otra y razones de la elección.
+Explicación de la herramienta que has utilizado parra generar el diagrama UML, y si la has contrastado con otra y conclusiones de porque has elegido esa
 
 ```
-| Característica                   | **DIA UML Schema**                                        | **Lucidchart**                                                   |
+| Característica                   | DIA                                                       | Lucidchart                                                       |
 |----------------------------------|-----------------------------------------------------------|------------------------------------------------------------------|
-| **Facilidad de uso**             | Interfaz sencilla pero menos intuitiva.                   | Interfaz moderna y amigable.                                     |
-| **Plataforma**                   | Software de escritorio (Windows, Linux).                  | Basado en la web (multiplataforma).                              |
-| **Colaboración en tiempo real**  | No soporta colaboración en línea.                         | Permite colaboración en tiempo real con múltiples usuarios.      |
-| **Personalización de diagramas** | Opciones básicas de personalización.                      | Amplia gama de opciones de estilo y personalización.             |
-| **Soporte para UML**             | Compatible con UML pero con menos herramientas avanzadas. | Soporta UML con muchas herramientas y plantillas avanzadas.      |
-| **Exportación**                  | SVG, PNG, PDF, XML, entre otros.                          | PNG, SVG, PDF, Visio, y más formatos compatibles.                |
-| **Integraciones**                | No tiene muchas integraciones.                            | Se integra con herramientas como Google Drive, Confluence, Jira. |
-| **Precio**                       | Gratuito y de código abierto.                             | Modelo Freemium, requiere suscripción para funciones avanzadas.  |
-| **Plantillas y automatización**  | Plantillas básicas y poca automatización.                 | Plantillas avanzadas y generación automática de diagramas.       |
+| Facilidad de uso                 | Interfaz sencilla pero menos intuitiva.                   | Interfaz moderna y amigable.                                     |
+| Plataforma                       | Software de escritorio (Windows, Linux).                  | Basado en la web (multiplataforma).                              |
+| Colaboración en tiempo real      | No soporta colaboración en línea.                         | Permite colaboración en tiempo real con múltiples usuarios.      |
+| Personalización de diagramas     | Opciones básicas de personalización.                      | Amplia gama de opciones de estilo y personalización.             |
+| Soporte para UML                 | Compatible con UML pero con menos herramientas avanzadas. | Soporta UML con muchas herramientas y plantillas avanzadas.      |
+| Exportación                      | SVG, PNG, PDF, XML, entre otros.                          | PNG, SVG, PDF, Visio, y más formatos compatibles.                |
+| Integraciones                    | No tiene muchas integraciones.                            | Se integra con herramientas como Google Drive, Confluence, Jira. |
+| Precio                           | Gratuito y de código abierto.                             | Modelo Freemium, requiere suscripción para funciones avanzadas.  |
+|Plantillas y automatización       | Plantillas básicas y poca automatización.                 | Plantillas avanzadas y generación automática de diagramas.       |
 ```
+
+He usado DIA porque anteriormente en el pasado ya la había utilizado para crear modelos Entidad Relación de base de datos e incluso algunos modelos UML. Por lo tanto estaba familiarizado.
 
 ### c) Conversión del Diagrama UML a Código
 
-Explicación del proceso de conversión del diagrama UML al código fuente en Kotlin.
+### Conversión de UML a Kotlin
+
+1. **Enums**:  
+   - Transformar los estados del pedido y los tipos de pago a `enum class`.  
+
+2. **Clases de datos (`data class`)**:  
+   - `Producto`, `Pedido`, `Pago`, `Cliente`, `Tarjeta` y `Cheque` son `data class` porque manejan datos.  
+
+3. **Relaciones**:  
+   - `Cliente` tiene una lista de `Pedido`, relación uno a muchos.  
+   - `Pedido` es lista de productos junto con cantidades (`Pair<Producto, Int>`).  
+   - `Pago` usa `TipoPago` para definir su forma de pago.  
+
+4. **Funciones**:  
+   - `Pedido` con métodos para agregar productos, calcular el total y actualizar el estado.  
+   - `Producto` tiene `actualizarStock()`, reduciendo cantidad de stock según las compras.  
+   - `Pago` tiene `registrarPago()`, que imprime la si se ha pagado correctamente.
+     
+
+* [src](uml2.kt)
 
 ## Recursos
 
