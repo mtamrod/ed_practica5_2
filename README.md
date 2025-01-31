@@ -42,6 +42,20 @@ Lista de los conceptos que aparecen en los diagramas UML y su relación con la p
 
 Explicación de la herramienta utilizada para generar el diagrama UML, comparación con otra y razones de la elección.
 
+```
+| Característica        | **DIA UML Schema** | **Lucidchart** |
+|----------------------|------------------|---------------|
+| **Facilidad de uso** | Interfaz sencilla pero menos intuitiva. | Interfaz moderna y amigable. |
+| **Plataforma** | Software de escritorio (Windows, Linux). | Basado en la web (multiplataforma). |
+| **Colaboración en tiempo real** | No soporta colaboración en línea. | Permite colaboración en tiempo real con múltiples usuarios. |
+| **Personalización de diagramas** | Opciones básicas de personalización. | Amplia gama de opciones de estilo y personalización. |
+| **Soporte para UML** | Compatible con UML pero con menos herramientas avanzadas. | Soporta UML con muchas herramientas y plantillas avanzadas. |
+| **Exportación** | SVG, PNG, PDF, XML, entre otros. | PNG, SVG, PDF, Visio, y más formatos compatibles. |
+| **Integraciones** | No tiene muchas integraciones. | Se integra con herramientas como Google Drive, Confluence, Jira. |
+| **Precio** | Gratuito y de código abierto. | Modelo Freemium, requiere suscripción para funciones avanzadas. |
+| **Plantillas y automatización** | Plantillas básicas y poca automatización. | Plantillas avanzadas y generación automática de diagramas. |
+```
+
 ### c) Conversión del Diagrama UML a Código
 
 Explicación del proceso de conversión del diagrama UML al código fuente en Kotlin.
