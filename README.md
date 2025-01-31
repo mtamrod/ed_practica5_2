@@ -4,7 +4,7 @@
 
 La actividad consiste en generar el diagrama de clases y posteriormente un esquema de lo que sería el código que se derive del diagrama de clases que represente lo descrito en el supuesto.
 
-![Diagrama](/UML2.jpg)
+![Diagrama](UML2.png)
 
 ## Objetivo
 
